@@ -1,0 +1,59 @@
+﻿html {
+	background: black;
+}
+body {
+	text-align: center;
+	color: white;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+#mainbox {
+	margin: auto;
+	margin-top: 50px;
+	width: 493px;
+	height: 820px;
+	background-image: url('SoftropeRPGSoundMixer.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-bottom: 50px;
+}
+#logo {
+	height: 54px;
+	background-image: url('SoftropeLogo.png');
+	background-repeat: no-repeat;
+	text-align: left;
+}
+#menu {
+	font-size: 170%;
+	text-align: right;
+	margin-top: 440px;
+}
+#menu a {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+#menu a:hover {
+	color: #00b4ff;
+}
+
+a{
+	color: #00b4ff;
+}
+#content {
+	text-align: left;
+	margin-top: 20px;
+	padding-bottom: 30px;
+}
+h2 {
+	font-size:170%;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	border-bottom: 1px #00b4ff solid;
+	color: #00b4ff;
+}
+
+p
+{
+	margin-bottom: 10px;
+	line-height: 180%;
+}

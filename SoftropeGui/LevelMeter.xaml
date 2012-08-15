@@ -1,0 +1,10 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:SoftropeGui="clr-namespace:SoftropeGui"
+	x:Class="SoftropeGui.LevelMeter"
+	x:Name="UserControl"
+	Width="136" Height="16">
+
+	<WrapPanel x:Name="LayoutRoot"/>
+</UserControl>

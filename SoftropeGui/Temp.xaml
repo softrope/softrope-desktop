@@ -1,0 +1,19 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="SoftropeGui.Temp"
+	x:Name="Window"
+	Title="Temp"
+	Width="460" Height="323" Background="#FF000000" xmlns:SoftropeGui="clr-namespace:SoftropeGui">
+	<Window.Resources>
+		<ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+			<WrapPanel IsItemsHost="True"/>
+		</ItemsPanelTemplate>
+	</Window.Resources>
+
+	<Grid>
+		<ListBox IsSynchronizedWithCurrentItem="True" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" Margin="0,48,0,0" x:Name="IainList" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}" BorderBrush="{x:Null}"/>
+		<Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Button" Click="Button_Click"/>
+	</Grid>
+</Window>

@@ -1,0 +1,98 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="SoftropeGui.SceneControl"
+	x:Name="UserControl" Width="88" Height="104" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic" IsHitTestVisible="True" BorderBrush="{x:Null}" DragLeave="UserControl_DragLeave" Background="#FF000000" Opacity="1">
+
+    <UserControl.Resources>
+        <Style x:Key="ButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border>
+                            <Rectangle SnapsToDevicePixels="true" Margin="4" Stroke="Black" StrokeDashArray="1 2" StrokeThickness="1"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="SceneButton" TargetType="{x:Type ToggleButton}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{x:Static Microsoft_Windows_Themes:ClassicBorderDecorator.ClassicBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0,0,1,1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Grid Width="64" Height="64">
+                            <Microsoft_Windows_Themes:ClassicBorderDecorator SnapsToDevicePixels="true" x:Name="ContentContainer" BorderStyle="None" BorderThickness="0,0,0,0" Background="#FF4F575F">
+                                <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True" Visibility="Visible" x:Name="contentPresenter" Width="64" Height="64"/>
+                            </Microsoft_Windows_Themes:ClassicBorderDecorator>
+                            <Viewbox HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+                                <Canvas Width="64" Height="64" x:Name="RoundedCornersFade">
+                                    <Path Width="64" Height="64" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#FF000000" Data="F1 M 1.14441e-005,0L 8,0C 3.58174,0 0,3.5817 0,8L 0,56C 0,60.4183 3.58174,64 8,64L 1.14441e-005,64L 0,56L 0,8L 1.14441e-005,0 Z M 64,3.05176e-005L 64,8.00003C 64,3.58176 60.4183,3.05176e-005 56,3.05176e-005L 64,3.05176e-005 Z M 64,64L 56,64C 60.4183,64 64,60.4183 64,56L 64,64 Z "/>
+                                    <Path Stretch="Fill" Data="F1 M 44.6667,-32C 40.2484,-32 36.6667,-28.4183 36.6667,-24L 36.6667,-6.90738C 44.9097,-2.64151 56.3336,-3.05176e-005 68.9583,-3.05176e-005C 81.2879,-3.05176e-005 92.4721,-2.51944 100.667,-6.61087L 100.667,-24C 100.667,-28.4183 97.0849,-32 92.6667,-32L 44.6667,-32 Z " Width="64" Height="32" Fill="#33FFFFFF"/>
+                                </Canvas>
+                            </Viewbox>
+                            <Path Stretch="Fill" Fill="#FFFFD600" Data="F1 M -24,-32.0001L 24,-32.0001C 28.4183,-32.0001 32,-28.4184 32,-24.0001L 32,23.9999C 32,28.4183 28.4183,31.9999 24,31.9999L -24,31.9999C -28.4183,31.9999 -32,28.4183 -32,23.9999L -32,-24.0001C -32,-28.4184 -28.4183,-32.0001 -24,-32.0001 Z M -24,-30C -27.3137,-30 -30,-27.3137 -30,-24L -30,24C -30,27.3138 -27.3137,30 -24,30L 24,30C 27.3137,30 30,27.3138 30,24L 30,-24C 30,-27.3137 27.3137,-30 24,-30L -24,-30 Z " HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" x:Name="Highlight"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderStyle" TargetName="ContentContainer" Value="RaisedFocused"/>
+                            </Trigger>
+                            <Trigger Property="Button.IsDefaulted" Value="true">
+                                <Setter Property="BorderStyle" TargetName="ContentContainer" Value="RaisedFocused"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Visibility" TargetName="contentPresenter" Value="Visible"/>
+                                <Setter Property="Visibility" TargetName="Highlight" Value="Hidden"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Storyboard x:Key="Storyboard1">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <Grid>
+        <Grid Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" IsEnabled="True">
+            <ToggleButton x:Name="PlayStopButton" Unchecked="PlayStopButton_Unchecked" Checked="PlayStopButton_Checked" Margin="0,0,0,16" BorderThickness="0,0,0,0" Style="{DynamicResource SceneButton}" Content="" IsThreeState="False" d:LayoutOverrides="Width, Height" HorizontalAlignment="Stretch" VerticalAlignment="Center" Click="PlayStopButton_Click" PreviewMouseDoubleClick="PlayStopButton_PreviewMouseDoubleClick">
+                <ToggleButton.ContextMenu>
+                    <ContextMenu Opened="ContextMenu_Opened">
+                        <MenuItem x:Name="EditSceneMenuItem" Header="Edit Scene" Click="EditSceneMenuItem_Click"/>
+                        <MenuItem x:Name="FadeOutMenuItem" Header="Fade out" IsCheckable="True" Checked="FadeOutMenuItem_Checked" Unchecked="FadeOutMenuItem_Unchecked" />
+                        <MenuItem x:Name="StopsOthersMenuItem" Header="Stops others" IsCheckable="True" Checked="StopsOthersMenuItem_Checked" Unchecked="StopsOthersMenuItem_Unchecked" />
+                        <MenuItem x:Name="LoadIconMenuItem" Header="Load picture..." Click="LoadIconMenuItem_Click"/>
+                        <!--MenuItem x:Name="ExportZipItem" Header="Export Zip" Click="ExportZipItem_Click"/-->
+                        <MenuItem x:Name="RemoveMenuItem" Header="Remove Scene" Click="RemoveMenuItem_Click"/>
+                    </ContextMenu>
+                </ToggleButton.ContextMenu>
+            </ToggleButton>
+            <TextBox VerticalAlignment="Bottom" Text="New Scene" TextWrapping="WrapWithOverflow" x:Name="SceneNameTextBox" FontSize="9" TextAlignment="Center" FontWeight="Normal" FontFamily="Neo Sans Std" d:IsStaticText="True" BorderThickness="0,0,0,0" Margin="0,0,0,0" Background="{x:Null}" Foreground="#FFFFFFFF" MaxLines="1" MaxWidth="72" Padding="0,0,0,0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" TextChanged="SceneNameTextBox_TextChanged" d:LayoutOverrides="Width" IsHitTestVisible="True"/>
+
+        </Grid>
+        <Path Fill="{x:Null}" Stretch="Fill" HorizontalAlignment="Left" Margin="-1,8,0,8" Width="2" Data="M7,6 L7,94" x:Name="LeftLine" Visibility="Hidden" StrokeThickness="2" Stroke="#FF7D7D7D"/>
+        <Path Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF7D7D7D" HorizontalAlignment="Right" Margin="0,8,-1,8" x:Name="RightLine" Width="2" Data="M7,6 L7,94" Visibility="Hidden" StrokeThickness="2"/>
+    </Grid>
+</UserControl>

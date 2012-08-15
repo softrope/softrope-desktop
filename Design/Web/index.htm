@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script src="jquery.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+// ================================== 
+// Cleartype fade fix by Mike Alsup
+
+jQuery.fn.fadeIn = function(speed, callback) { 
+     return this.animate({
+          opacity: 'show' }, speed, function() { 
+               if (jQuery.browser.msie) 
+                    this.style.removeAttribute('filter'); 
+               if (typeof callback == 'function') 
+                    callback();
+     }); 
+};
+
+jQuery.fn.fadeOut = function(speed, callback) { 
+     return this.animate({
+           opacity: 'hide' }, speed, function() { 
+               if (jQuery.browser.msie) 
+                    this.style.removeAttribute('filter'); 
+               if (typeof callback == 'function') callback();
+     }); 
+}; 
+
+jQuery.fn.fadeTo = function(speed,to,callback) { 
+     return this.animate({opacity: to }, speed, function() { 
+          if (to == 1 && jQuery.browser.msie) 
+               this.style.removeAttribute('filter'); 
+          if (typeof callback == 'function') callback(); 
+     }); 
+};
+
+
+$(document).ready(function(){
+
+   $("#about").hide();
+   $("#beta").hide();
+   $("#contact").hide();
+
+
+
+   $(".aboutLink").click(function(event) {
+     $("#beta").hide();
+     $("#contact").hide();
+     $("#about").fadeIn("fast");  
+     event.preventDefault();      
+   });
+   
+   $(".betaLink").click(function(event) {
+     $("#about").hide();
+     $("#contact").hide();
+     $("#beta").fadeIn("fast"); 
+     event.preventDefault();      
+   });
+
+   $(".contactLink").click(function(event) {
+     $("#beta").hide();
+     $("#about").hide();
+     $("#contact").fadeIn("fast");  
+     event.preventDefault();   
+   });
+
+});
+</script>
+<title>Softrope -- RPG Soundscape Mixer</title>
+</head>
+
+<body>
+
+<div id="mainbox">
+	<div id="logo">
+	</div>
+	<div id="menu">
+		<a class="aboutLink" href="#about">About Softrope</a> |
+		<a class="betaLink" href="#beta">Join beta</a> |
+		<a class="contactLink" href="#contact">Contact</a> </div>
+	<div id="content">
+		<div id="about">
+			<h2>What is Softrope?</h2>
+			<p>Softrope is an audio application for Dungeon Masters, a kind of 
+			RPG sound mixer. Softrope allows you to build a collection of 
+			sound-based scenes. You build each scene with simple single 
+			sound-effects, layered up to create a more complex soundscape.</p>
+			<h2>How about an example?</h2>
+			<p>Picture the scene, your players’ character’s are tramping through 
+			a lush green tropical rainforest, in a storm. Let’s build a 
+			soundscape for this.</p>
+			<p>1st Sound Effect: A short rain loop. Looped in Softrope to loop 
+			continuously.</p>
+			<p>2nd Sound Effect: Another continuous loop, this time some 
+			chirping jungle birds. </p>
+			<p>3rd Sound Effect: A thunderclap set to loop with a random ten to 
+			thirty second gap.</p>
+			<p>Now the thunderclap sound effect might get a bit repetitive, so 
+			Softrope allows you to choose multiple samples for each sound 
+			effect, and randomly chooses one for each repeat. The randomness of 
+			the actual thunder sample used and the random gap between 
+			thunderclaps keeps the whole scene soun<span lang="en-gb">ding</span> more organic.</p>
+			<h2>
+			<a href="http://teknohippy.net/wp-content/uploads/2008/10/softropescreenshot2.png">
+			</a>How does it work <span lang="en-gb">during</span> play?</h2>
+			<p>While you are running a game, be it Dungeons and Dragons, GURPS, 
+			or whatever, you need things kept simple and out of the way.&nbsp; 
+			During play you are presented with a scene full of scene buttons, 
+			click one and that scene plays. It&#39;s as simple as that.</p>
+			<h2>Why Softrope?</h2>
+			<p>Surely I’m not the only DM to have a this happen in a situation 
+			where rope was required.</p>
+			<p>Player: “I’ve got some soft rope, will that do.”</p>
+			<p>DM: “WTF? Soft rope?”</p>
+			<p>Player: “Here on my equipment I’ve written, ‘Rope (SOft)’.”</p>
+			<p>DM: *Looks closely*.</p>
+			<p>DM: *Slaps player*.</p>
+		</div>
+		<div id="beta">
+			<h2>Apply for beta test</h2>
+			<p>Softrope is now looking for DMs to beta test. To apply for to 
+			become a beta tester simply email <a href="mailto:beta@softrope.net">
+			beta@softrope.net</a>.</p>
+			<p>For bugs and suggestions please see
+			<a href="http://softrope.uservoice.com">softrope.uservoice.com</a>.</p>
+		</div>
+		<div id="contact">
+			<h2>Contact details</h2>
+			<p>Email: <a href="mailto:beta@softrope.net">info@softrope.net</a></p>
+			<p>Twitter: <a href="http://twitter.com/teknohippy">@teknohippy</a></p>
+			<p>Suggestions and bugs: <a href="http://softrope.uservoice.com">
+			softrope.uservoice.com</a></p>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="SoftropeGui.SingleLed"
+	x:Name="UserControl"
+	Width="13" Height="13">
+
+	<Grid x:Name="LayoutRoot">
+		<Viewbox x:Name="Led" HorizontalAlignment="Right" Margin="0,0.129,0.387,0" VerticalAlignment="Top" Width="12.48" Height="12.48">
+			<Canvas Width="12.48" Height="12.48">
+				<Path x:Name="Countersink" Width="12" Height="12" Canvas.Left="0.407623" Canvas.Top="0.287659" Stretch="Fill" Fill="#FF000000" Data="F1 M 6.40762,0.287659C 9.72131,0.287659 12.4076,2.97394 12.4076,6.28766C 12.4076,9.60132 9.72131,12.2877 6.40762,12.2877C 3.0939,12.2877 0.407623,9.60132 0.407623,6.28766C 0.407623,2.97394 3.0939,0.287659 6.40762,0.287659 Z ">
+
+				</Path>
+				<Path x:Name="Diode" Width="7.71426" Height="7.71423" Canvas.Left="2.564" Canvas.Top="2.472" Stretch="Fill" Data="F1 M 6.55045,2.85907C 8.68069,2.85907 10.4076,4.58594 10.4076,6.71619C 10.4076,8.84644 8.68069,10.5733 6.55045,10.5733C 4.4202,10.5733 2.69333,8.84644 2.69333,6.71619C 2.69333,4.58594 4.4202,2.85907 6.55045,2.85907 Z ">
+					<Path.Fill>
+						<RadialGradientBrush RadiusX="0.455003" RadiusY="0.455004" Center="0.625,0.374998" GradientOrigin="0.625,0.374998">
+							<RadialGradientBrush.RelativeTransform>
+								<TransformGroup/>
+							</RadialGradientBrush.RelativeTransform>
+							<GradientStop Color="#F6D6E8FF" Offset="0"/>
+							<GradientStop Color="#FE009CFF" Offset="1"/>
+						</RadialGradientBrush>
+					</Path.Fill>
+
+				</Path>
+			</Canvas>
+		</Viewbox>
+	</Grid>
+</UserControl>
