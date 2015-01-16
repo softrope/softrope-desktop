@@ -281,7 +281,6 @@
   </Target>
   -->
   <Import Project="SubsetFont.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
   <Target Name="BeforeBuild" Condition="'$(Configuration)'=='Release'">
     <Message Text="Committing." />
     <SvnCommit Message="message" Targets="@(CodeFiles)" UserName="iain" Password="marlboro" ToolPath="C:\Program Files\Subversion\bin36n" />
@@ -294,11 +293,6 @@
     <Message Text="Written AssemblyInfo.cs" />
   </Target>
   <Target Name="AfterBuild" Condition="'$(Configuration)'=='Release'">
-    <Message Text="Updating installer script to version 0.2.$(Revision)" />
-    <Exec Command="&quot;C:\Program Files\Caphyon\Advanced Installer 6.9.1\AdvancedInstaller.com&quot; /edit D:\Projects\Softrope\SoftropeSetup\SoftropeSetup.aip /SetVersion 0.2.$(Revision)" />
-    <Message Text="Updated installer script." />
-    <Message Text="Building MSI." />
-    <Exec Command="&quot;C:\Program Files\Caphyon\Advanced Installer 6.9.1\AdvancedInstaller.com&quot; /build D:\Projects\Softrope\SoftropeSetup\SoftropeSetup.aip" />
-    <Message Text="MSI Built." />
+   
   </Target>
 </Project>
