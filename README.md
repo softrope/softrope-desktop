@@ -1,6 +1,8 @@
 Softrope
 ========
 
+[![Join the chat at https://gitter.im/IainMNorman/Softrope](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/IainMNorman/Softrope?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 **Notes**
 
 Sorry but this won't compile straight away, you probably need to install Bass.NET into your GAC. Have a look for it on http://www.un4seen.com/.
