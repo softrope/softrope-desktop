@@ -2,7 +2,6 @@ Softrope
 ========
 
 **Notes**
-
 Sorry but this won't compile straight away, you probably need to install Bass.NET into your GAC. Have a look for it on http://www.un4seen.com/.
 
 The setup project relies on Advanced Installer (AI) from Caphyon. I'd suggest not building it at all if you have not got AI.
